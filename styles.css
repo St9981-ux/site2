@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #333; /* Couleur du texte des titres - gris très foncé */
+    overflow-x: hidden; /* Empêche le débordement horizontal */
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh; /* Chaque section prend toute la hauteur de la fenêtre */
+    box-sizing: border-box; /* Assure que le padding n'ajoute pas de taille supplémentaire */
+    position: relative; /* Nécessaire pour positionner le menu en haut à droite */
+}
+
+.section-turquoise {
+    background: linear-gradient(135deg, #00ffcc 50%, #00ffe1 100%); /* Dégradé turquoise avec une prédominance claire de #00ffcc */
+    padding: 0;
+}
+
+.header-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 40px; /* Espacement entre les éléments du menu */
+}
+
+.header-menu a {
+    color: #1a1a1a; /* Gris très foncé, presque noir pour le texte du menu */
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold; /* Met en gras le texte du menu */
+}
+
+.header-menu a:hover {
+    text-decoration: underline;
+}
+
+.signature {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 150px; /* Ajustez cette valeur pour agrandir ou réduire l'image */
+    height: auto; /* Maintient les proportions de l'image */
+}
+
+/* Sections suivantes avec des couleurs et dégradés spécifiques */
+.split-section {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Chaque section prend toute la hauteur de la fenêtre */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* Assure que le padding n'ajoute pas de taille supplémentaire */
+}
+
+/* Section pour chaque moitié du split */
+.half-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Aligne le contenu en haut du conteneur */
+    padding: 40px; /* Ajuste le padding pour une marge interne aérée */
+    box-sizing: border-box;
+    height: 100%;
+    width: 50%; /* Chaque bloc occupe 50% de la largeur */
+    text-align: justify; /* Justifie le texte dans les blocs */
+}
+
+/* Assurer que l'image ne dépasse pas du conteneur */
+.half-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Blocs de couleurs */
+.half-yellow {
+    background: linear-gradient(135deg, #ecfd18 30%, #cbfd17 100%); /* Jaune prédominant avec une transition douce vers vert fluo */
+}
+
+.half-purple {
+    background: linear-gradient(135deg, #fb00ff 0%, #ff0095 100%); /* Violet prédominant avec une transition douce vers rouge fluo */
+}
+
+.half-red {
+    background: linear-gradient(135deg, #e53517 0%, #ff004c 100%); /* Rouge prédominant avec une transition douce vers violet fluo */
+}
+
+.half-lightblue {
+    background: linear-gradient(135deg, #00bfff 0%, #0091ff 100%); /* Bleu clair prédominant avec une transition douce vers bleu foncé */
+}
+
+.half-inverse-yellow {
+    background: linear-gradient(135deg, #00ff1a 30%, #bbff00 100%); /* Vert fluo prédominant avec une transition douce vers jaune fluo */
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+}
+
+/* Styles pour les titres */
+.main-title {
+    font-size: 4em; /* Taille de police pour le titre principal */
+    color: #ffffff; /* Couleur blanche pour le texte du titre */
+    margin-bottom: 20px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.subtitle {
+    font-size: 1.5em; /* Taille de police pour le sous-titre */
+    color: #ffffff; /* Couleur blanche pour le texte */
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #ffffff; /* Couleur du texte du bouton */
+    background-color: #ff007f; /* Couleur de fond du bouton */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e60074; /* Couleur de fond du bouton au survol */
+}
+
+/* Animation de texte avec curseur clignotant */
+.typing-animation {
+    font-size: 1.5em; /* Taille réduite du texte */
+    color: #1a1a1a; /* Gris très foncé pour le texte */
+    white-space: normal; /* Permet au texte de s'enrouler à la ligne */
+    overflow: hidden;
+    border-right: 9px solid #ffffff; /* Curseur rectangulaire trois fois plus épais */
+    animation: typing 10s steps(60, end), blink-caret 0.75s step-end infinite;
+    margin: 20px; /* Marge autour du texte */
+    text-align: justify; /* Justifie le texte pour une présentation uniforme */
+    width: auto; /* Permet au texte d'occuper toute la largeur du conteneur sans couper les mots */
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #ffffff; }
+}
+
+/* Style pour le titre de la sculpture */
+.typing-animation h3 {
+    font-size: 1.5em; /* Taille réduite du titre */
+    font-weight: bold; /* Texte en gras */
+    margin-bottom: 1em; /* Marge sous le titre */
+    text-align: center; /* Centrer le titre */
+}
