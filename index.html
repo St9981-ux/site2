@@ -3,11 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Site</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Lien vers ton fichier CSS -->
+    <title>Site Exemple</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctaButton = document.querySelector('.cta-button');
+            ctaButton.addEventListener('click', function(event) {
+                event.preventDefault();
+                document.querySelector('.split-section').scrollIntoView({ behavior: 'smooth' });
+            });
+
+            const elements = document.querySelectorAll('.typing-animation');
+            elements.forEach(function(element) {
+                const text = element.innerHTML;
+                element.innerHTML = '';
+                let i = 0;
+                function typeWriter() {
+                    if (i < text.length) {
+                        element.innerHTML += text.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    }
+                }
+                typeWriter();
+            });
+        });
+    </script>
 </head>
 <body>
-    <h1>Bienvenue sur mon site</h1>
-    <p>Ceci est la page d'accueil de mon site hébergé sur GitHub Pages.</p>
+    <div class="section section-turquoise">
+        <img src="signature.png" alt="Signature" class="signature">
+        <div class="header-menu">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="#purchase">Purchase</a>
+        </div>
+        <div class="content-wrapper">
+            <h1 class="main-title">Sofiane B.</h1>
+            <p class="subtitle">Sous-titre captivant</p>
+            <a href="#" class="cta-button">Découvrir les œuvres</a>
+        </div>
+    </div>
+
+    <div id="about" class="split-section">
+        <div class="half-section half-yellow">
+            <img src="image1.png" alt="Image Titre 1">
+        </div>
+        <div class="half-section half-purple">
+            <div class="typing-animation">
+                <h3>"Réflexion Éternelle"</h3>
+                Capture l'essence de l'introspection à travers une fusion élégante de formes fluides et de lignes sculpturales. Cette œuvre incarne la quête éternelle de soi et de la compréhension intérieure. Chaque courbe est soigneusement élaborée pour refléter la lumière et créer une interaction dynamique avec l'espace environnant, invitant le spectateur à une méditation personnelle et profonde.
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="split-section">
+        <div class="half-section half-red">
+            <div class="typing-animation">
+                <h3>"Harmonie Céleste"</h3>
+                Est une célébration de l'équilibre et de la symétrie universelle. Inspirée par les mouvements célestes et les forces naturelles, cette sculpture combine des éléments géométriques avec des touches organiques pour évoquer un sentiment de sérénité et de perfection cosmique. Ses lignes épurées et ses détails raffinés créent une œuvre d'art qui transcende les frontières entre l'art abstrait et la beauté naturelle.
+            </div>
+        </div>
+        <div class="half-section half-lightblue">
+            <img src="image2.png" alt="Image Titre 4">
+        </div>
+    </div>
+
+    <div id="purchase" class="split-section">
+        <div class="half-section half-inverse-yellow">
+            <img src="image3.png" alt="Image Titre 5">
+        </div>
+        <div class="half-section">
+            <div class="typing-animation">
+                <h3>"Éveil de l'Inconnu"</h3>
+                Est une exploration audacieuse des mystères et des possibilités infinies de l'esprit humain. Avec des formes audacieuses et des textures contrastées, cette sculpture invite le spectateur à un voyage de découverte et d'émerveillement. L'œuvre joue avec les perceptions et les émotions, créant un dialogue visuel stimulant qui encourage une réflexion sur l'inconnu et l'imaginaire.
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Footer Content</p>
+    </footer>
 </body>
 </html>
