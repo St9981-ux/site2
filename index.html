@@ -105,12 +105,25 @@
             background: linear-gradient(135deg, #00ff1a 30%, #bbff00 100%); /* Vert fluo prédominant avec une transition douce vers jaune fluo */
         }
 
-        /* Footer */
-        footer {
+       
+
+
+ 	footer {
             background-color: #333;
-            padding: 20px;
-            text-align: center;
             color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+	footer a {
+   	 color: #ffdd00; /* Jaune pour les liens dans le footer */
+   	 text-decoration: none; /* Pas de soulignement */
+ 	 transition: color 0.3s ease; /* Transition douce pour le changement de couleur */
+	}
+
+
+        footer a:hover {
+            color: #ff6a00;
         }
 
         /* Styles pour les titres */
@@ -182,7 +195,7 @@
         <img src="signature.png" alt="Signature" class="signature"> <!-- Image de la signature en haut à gauche -->
         <div class="header-menu">
             <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.html">Contact</a>
             <a href="purchase.html">Purchase</a>
         </div>
         <div class="content-wrapper">
@@ -233,7 +246,8 @@
 
     <!-- Footer -->
  <footer>
-        <p>© 2024 by SculptLab. Tous droits réservés. | <a href="#">Mentions légales</a></p>
+        <p>© 2024 by SculptLab. Tous droits réservés. | <a href="mentions_legales.html">Mentions légales</a></p>
+
     </footer>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Sculptures</title>
+    <style>
+        html, body {
+            height: 100%; /* Assure que le body prend toute la hauteur */
+            margin: 0; /* Enlève les marges par défaut */
+            font-family: Arial, sans-serif;
+            color: #333; /* Couleur du texte des titres - gris très foncé */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column; /* Aligne le contenu en colonne */
+        }
+
+        .content {
+            flex: 1; /* Permet au contenu de s'étendre pour remplir l'espace restant */
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh; /* Chaque section prend toute la hauteur de la fenêtre */
+            box-sizing: border-box; /* Assure que le padding n'ajoute pas de taille supplémentaire */
+            position: relative; /* Nécessaire pour positionner le menu en haut à droite */
+        }
+
+        .section-turquoise {
+            background: linear-gradient(135deg, #00ffcc 50%, #00ffe1 100%); /* Dégradé turquoise avec une prédominance claire de #00ffcc */
+            padding: 0;
+            height: 5cm; /* Hauteur du bandeau turquoise */
+            display: flex;
+            align-items: flex-end; /* Aligne les éléments en bas du bandeau */
+            justify-content: flex-start; /* Aligne les éléments à gauche */
+            position: relative;
+            margin-bottom: 20px; /* Marge pour espacer du reste du contenu */
+        }
+
+        .header-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 40px; /* Espacement entre les éléments du menu */
+        }
+
+        .header-menu a {
+            color: #1a1a1a; /* Gris très foncé, presque noir pour le texte du menu */
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold; /* Met en gras le texte du menu */
+        }
+
+        .header-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .signature {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px; /* Ajustez cette valeur pour agrandir ou réduire l'image */
+            height: auto; /* Maintient les proportions de l'image */
+        }
+
+        .main-title {
+            font-size: 2em; /* Taille légèrement réduite du titre */
+            color: #ffffff; /* Couleur blanche */
+            margin-left: 20px;
+            margin-bottom: 0.3cm; /* Marge au bas du bandeau turquoise */
+        }
+
+        .contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre les éléments horizontalement */
+            padding: 50px 20px;
+            background-color: #f3f4f6;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 560px; /* Largeur de la boîte du formulaire */
+            max-width: 90%; /* Limite la largeur maximale */
+        }
+
+        .contact-form h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        .contact-form label {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: #ffffff;
+            background-color: #ff007f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #e60074;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin: 0; /* Assure qu'il n'y a pas de marge en bas */
+            box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur et la hauteur totales */
+        }
+
+        footer p {
+            margin: 0; /* Assure qu'il n'y a pas de marge autour du texte */
+            font-size: 1em;
+        }
+
+        footer a {
+            color: #ffdd00;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #ff6a00;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!-- Bloc turquoise avec le menu -->
+        <div class="section section-turquoise">
+            <img src="signature.png" alt="Signature" class="signature">
+            <div class="header-menu">
+                <a href="index.html#about">About</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="purchase.html">Purchase</a>
+            </div>
+            <h1 class="main-title">Contactez-nous</h1>
+        </div>
+
+        <!-- Section de contact -->
+        <div class="contact-section">
+            <div class="contact-form">
+                <h2>Nous contacter</h2>
+                <form action="mailto:contact@votre-domaine.com" method="post" enctype="text/plain">
+                    <label for="name">Nom :</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message :</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 by SculptLab. Tous droits réservés. | <a href="#">Mentions légales</a></p>
+    </footer>
+</body>
+</html>
