@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Achat - Sculptures</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Commander - Sculptures</title>
     <style>
-        /* Bordure en dégradé en haut de la page */
-        .gradient-border {
-            width: 100%;
-            height: 10px;
-            background: linear-gradient(to right, #ff007f, #ff6a00, #ffdd00);
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333; /* Couleur du texte des titres - gris très foncé */
+            overflow-x: hidden; /* Empêche le débordement horizontal */
+        }
+
+        .section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh; /* Chaque section prend toute la hauteur de la fenêtre */
+            box-sizing: border-box; /* Assure que le padding n'ajoute pas de taille supplémentaire */
+            position: relative; /* Nécessaire pour positionner le menu en haut à droite */
+        }
+
+        .section-turquoise {
+            background: linear-gradient(135deg, #00ffcc 50%, #00ffe1 100%); /* Dégradé turquoise avec une prédominance claire de #00ffcc */
+            padding: 0;
+            height: 5cm; /* Hauteur du bandeau turquoise */
+            display: flex;
+            align-items: flex-end; /* Aligne les éléments en bas du bandeau */
+            justify-content: flex-start; /* Aligne les éléments à gauche */
+            position: relative;
+            margin-bottom: 20px; /* Marge pour espacer du reste du contenu */
+        }
+
+        .header-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 40px; /* Espacement entre les éléments du menu */
+        }
+
+        .header-menu a {
+            color: #1a1a1a; /* Gris très foncé, presque noir pour le texte du menu */
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold; /* Met en gras le texte du menu */
+        }
+
+        .header-menu a:hover {
+            text-decoration: underline;
+        }
+
+        .signature {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 150px; /* Ajustez cette valeur pour agrandir ou réduire l'image */
+            height: auto; /* Maintient les proportions de l'image */
+        }
+
+        .main-title {
+            font-size: 2em; /* Taille légèrement réduite du titre */
+            color: #ffffff; /* Couleur blanche */
+            margin-left: 20px;
+            margin-bottom: 0.3cm; /* Marge au bas du bandeau turquoise */
         }
 
         .purchase-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centre les éléments horizontalement */
             padding: 50px 20px;
-            text-align: center;
             background-color: #f3f4f6;
         }
 
@@ -25,23 +81,25 @@
             flex-direction: column;
             align-items: center;
             background-color: #ffffff;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 560px; /* Augmenté de 40% par rapport à la largeur précédente (400px) */
+            max-width: 90%; /* Limite la largeur maximale */
         }
 
         .sculpture-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
 
         .sculpture-item img {
             max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
             transition: transform 0.3s ease;
         }
 
@@ -50,30 +108,24 @@
         }
 
         .sculpture-title {
-            font-size: 2em;
+            font-size: 1.5em;
             color: #333;
             margin-bottom: 10px;
         }
 
-        .sculpture-description {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .buy-button {
+        .buy-button, .cta-button {
             display: inline-block;
-            padding: 15px 30px;
-            font-size: 1.2em;
+            padding: 10px 20px;
+            font-size: 1.1em;
             color: #ffffff;
             background-color: #ff007f;
             text-decoration: none;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-top: 10px; /* Marge au-dessus du bouton */
         }
 
-        .buy-button:hover {
+        .buy-button:hover, .cta-button:hover {
             background-color: #e60074;
         }
 
@@ -100,20 +152,24 @@
         }
     </style>
 </head>
-
 <body>
-    <!-- Bordure en dégradé en haut de la page -->
-    <div class="gradient-border"></div>
+    <!-- Bloc turquoise avec le menu -->
+    <div class="section section-turquoise">
+        <img src="signature.png" alt="Signature" class="signature">
+        <div class="header-menu">
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="purchase.html">Purchase</a>
+        </div>
+        <h1 class="main-title">Commander des Sculptures</h1>
+    </div>
 
     <!-- Page d'achat -->
     <div class="purchase-section">
-        <h1 class="main-title">Acheter des Sculptures</h1>
-
         <!-- Sculpture 1 -->
         <div class="sculpture-item">
             <img src="image1.png" alt="Réflexion Éternelle">
             <h2 class="sculpture-title">Réflexion Éternelle</h2>
-            <p class="sculpture-description">Une œuvre qui capture l'essence de l'introspection et de la quête intérieure à travers des formes fluides et des lignes sculpturales.</p>
             <a href="#" class="buy-button">Acheter maintenant</a>
         </div>
 
@@ -121,7 +177,6 @@
         <div class="sculpture-item">
             <img src="image2.png" alt="Harmonie Céleste">
             <h2 class="sculpture-title">Harmonie Céleste</h2>
-            <p class="sculpture-description">Une célébration de l'équilibre universel, inspirée par les mouvements célestes et les forces naturelles.</p>
             <a href="#" class="buy-button">Acheter maintenant</a>
         </div>
 
@@ -129,7 +184,6 @@
         <div class="sculpture-item">
             <img src="image3.png" alt="Éveil de l'Inconnu">
             <h2 class="sculpture-title">Éveil de l'Inconnu</h2>
-            <p class="sculpture-description">Une exploration audacieuse des mystères et des possibilités infinies de l'esprit humain.</p>
             <a href="#" class="buy-button">Acheter maintenant</a>
         </div>
     </div>
@@ -139,5 +193,4 @@
         <p>© 2024 by SculptLab. Tous droits réservés. | <a href="#">Mentions légales</a></p>
     </footer>
 </body>
-
 </html>
